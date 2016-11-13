@@ -1,0 +1,102 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+//(a*b)/c
+
+//Declaracion de variables
+float a;
+float b;
+float c;
+float d;
+float rA;
+float rB;
+float rC;
+float rD;
+char x;
+
+using namespace std;
+
+  //Codigo
+int main()
+{
+  cout << "La regla de 3 tiene formato a/c b/d \n";
+  cout << "Introduce el valor que quieres obtener (a, b, c o d) en minus. \n";
+  std::cin >> x;
+  //Aqui es donde empieza lo xungo
+  switch(x)
+  {
+// a
+    case 'a':
+      cout << "Has elegido a \n" << endl;
+      cout << "Introduce el valor de b \n";
+      std::cin >> b;
+      cout << "Intoduce el valor de c \n";
+      std::cin >> c;
+      cout << "Introduce el valor de d \n";
+      std::cin >> d;
+      cout << "Valores introducidos: \n";
+      cout << "a = x " << "b = " << b << " c = " << c << " d = " << d << "\n";
+      system("pause");
+    //Operacion de rA (c*b / d)
+      rA = (b*c)/d;
+      cout << "(" << b << "*" << c << ")/" << d << "\n";
+      cout << "Solucion: a = " << rA << endl;
+      break;
+// b
+    case 'b':
+      cout << "Has elegido b \n" << endl;
+      cout << "Introduce el valor de a \n";
+      std::cin >> a;
+      cout << "Introduce el valor de c \n";
+      std::cin >> c;
+      cout << "Introduce el valor de d \n";
+      std::cin >> d;
+      cout << "Valores introducidos: \n";
+      cout << "a = " << a << " b = x " << "c= " << c << " d = " << d << "\n";
+      system("pause");
+    //Operacion de rB
+      rB = (a*d)/c;
+      cout << "(" << a << "*" << d << ")/" << c << "\n";
+      cout << "Solucion: b = " << rB << endl;
+      break;
+// c
+    case 'c':
+      cout << "Has elegido c \n" << endl;
+      cout << "Introduce el valor de a \n";
+      std::cin >> a;
+      cout << "Introduce el valor de b \n";
+      std::cin >> b;
+      cout << "Introduce el valor de d \n";
+      std::cin >> d;
+      cout << "Valores introducidos \n";
+      cout << "a = " << a << " b = " << b << " c = x " << "d = " << d << "\n";
+      system("pause");
+    //operacion de rC
+      rC = (a*d)/b;
+      cout << "(" << a << "*" << d << ")/" << b << "\n";
+      cout << "Solucion: c = " << rC << endl;
+      break;
+// d
+    case 'd':
+      cout << "Has elegido d \n" << endl;
+      cout << "Introduce el valor de a \n";
+      std::cin >> a;
+      cout << "Introduce el valor de b \n";
+      std::cin >> b;
+      cout << "Introduce el valor de c \n";
+      std::cin >> c;
+      cout << "Valores introducidos \n";
+      cout << "a = " << a << " b = " << b << " c = " << c <<" d = x" << "\n";
+      system("pause");
+    //operacion de rD
+      rD = (b*c)/a;
+      cout << "(" << b << "*" << c << ")/" << a << "\n";
+      cout << "Solucion: d = " << rD << endl;
+      break;
+// error
+    default:
+      cout << "Tienes que introducir a, b, c o d" << endl;
+  }
+  system("pause");
+  return 0;
+}
