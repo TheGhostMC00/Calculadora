@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+  // Cambiar float por double para guardar mas numeros (10^308) y viceversa (10^38)
+double a;
+double b;
+double rSuma;
+double rResta;
+double rMult;
+double rDivd;
+
+using namespace std;
+
+  // Codigo de la calculadora
+
+int main()
+{
+  // Mostrar cifras de las operaciones
+  std::cout << "Introduce el primer numero \n";
+  std::cin >> a;
+  cout << "Introduce el segundo numero \n";
+  std::cin >> b;
+  printf("Variables actuales: \n\n");
+  cout << "Primera cifra (a) = " << a << "\n";
+  cout << "Segunda cifra (b) = " << b << "\n\n";
+  system("PAUSE");
+  rSuma = a+b;
+  rResta = a-b;
+  rMult = a*b;
+  rDivd = a/b;
+  // Mostrar resultados de las operaciones
+  	// Operaciones basicas
+  printf("Resultados: \n\n");
+  cout << "Suma = " << rSuma << "\n";
+  cout << "Resta = " << rResta << "\n";
+  cout << "Multiplicacion = " << rMult << "\n";
+      // La division aproxima los decimales
+  cout << "Division = " << rDivd << "\n\n";
+  system("PAUSE");
+  return 0;
+  // Fin del proceso
+}
