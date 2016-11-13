@@ -1,0 +1,137 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+
+using namespace std;
+
+float elegir;
+
+int main()
+{
+  cout << "Elige el tipo de calculadora \n";
+  cout << "Teclea 1 para la calculadora basica \n";
+  cout << "Teclea 2 para la calculadora de reglas de tres \n" << endl;
+  std::cin >> elegir;
+  if(elegir == 1)
+  {
+      cout << "Calculadora basica" << endl;
+      double a;
+      double b;
+      double rSuma;
+      double rResta;
+      double rMult;
+      double rDivd;
+        // Mostrar cifras de las operaciones
+        std::cout << "Introduce el primer numero \n";
+        std::cin >> a;
+        cout << "Introduce el segundo numero \n";
+        std::cin >> b;
+        printf("Variables actuales: \n\n");
+        cout << "Primera cifra (a) = " << a << "\n";
+        cout << "Segunda cifra (b) = " << b << "\n\n";
+        system("PAUSE");
+        rSuma = a+b;
+        rResta = a-b;
+        rMult = a*b;
+        rDivd = a/b;
+        printf("Resultados: \n\n");
+        cout << "Suma = " << rSuma << "\n";
+        cout << "Resta = " << rResta << "\n";
+        cout << "Multiplicacion = " << rMult << "\n";
+        cout << "Division = " << rDivd << "\n\n";
+        system("PAUSE");
+  }
+  else if (elegir == 2)
+  {
+    float a;
+    float b;
+    float c;
+    float d;
+    float rA;
+    float rB;
+    float rC;
+    float rD;
+    char x;
+
+      cout << "La regla de 3 tiene formato a/c b/d \n";
+      cout << "Introduce el valor que quieres obtener (a, b, c o d) en minus. \n";
+      std::cin >> x;
+      //Aqui es donde empieza lo xungo
+      switch(x)
+      {
+    // a
+        case 'a':
+          cout << "Has elegido a \n" << endl;
+          cout << "Introduce el valor de b \n";
+          std::cin >> b;
+          cout << "Intoduce el valor de c \n";
+          std::cin >> c;
+          cout << "Introduce el valor de d \n";
+          std::cin >> d;
+          cout << "Valores introducidos: \n";
+          cout << "a = x " << "b = " << b << " c = " << c << " d = " << d << "\n";
+          system("pause");
+        //Operacion de rA (c*b / d)
+          rA = (b*c)/d;
+          cout << "(" << b << "*" << c << ")/" << d << "\n";
+          cout << "Solucion: a = " << rA << endl;
+          break;
+    // b
+        case 'b':
+          cout << "Has elegido b \n" << endl;
+          cout << "Introduce el valor de a \n";
+          std::cin >> a;
+          cout << "Introduce el valor de c \n";
+          std::cin >> c;
+          cout << "Introduce el valor de d \n";
+          std::cin >> d;
+          cout << "Valores introducidos: \n";
+          cout << "a = " << a << " b = x " << "c= " << c << " d = " << d << "\n";
+          system("pause");
+        //Operacion de rB
+          rB = (a*d)/c;
+          cout << "(" << a << "*" << d << ")/" << c << "\n";
+          cout << "Solucion: b = " << rB << endl;
+          break;
+    // c
+        case 'c':
+          cout << "Has elegido c \n" << endl;
+          cout << "Introduce el valor de a \n";
+          std::cin >> a;
+          cout << "Introduce el valor de b \n";
+          std::cin >> b;
+          cout << "Introduce el valor de d \n";
+          std::cin >> d;
+          cout << "Valores introducidos \n";
+          cout << "a = " << a << " b = " << b << " c = x " << "d = " << d << "\n";
+          system("pause");
+        //operacion de rC
+          rC = (a*d)/b;
+          cout << "(" << a << "*" << d << ")/" << b << "\n";
+          cout << "Solucion: c = " << rC << endl;
+          break;
+    // d
+        case 'd':
+          cout << "Has elegido d \n" << endl;
+          cout << "Introduce el valor de a \n";
+          std::cin >> a;
+          cout << "Introduce el valor de b \n";
+          std::cin >> b;
+          cout << "Introduce el valor de c \n";
+          std::cin >> c;
+          cout << "Valores introducidos \n";
+          cout << "a = " << a << " b = " << b << " c = " << c <<" d = x" << "\n";
+          system("pause");
+        //operacion de rD
+          rD = (b*c)/a;
+          cout << "(" << b << "*" << c << ")/" << a << "\n";
+          cout << "Solucion: d = " << rD << endl;
+          break;
+    // si hay un error
+        default:
+          cout << "Tienes que introducir a, b, c o d" << endl;
+    	}
+  	}
+  system("pause");
+  return 0;
+}
