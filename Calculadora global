@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -9,11 +10,13 @@ float elegir;
 int main()
 {
   cout << "Elige el tipo de calculadora \n";
-  cout << "Teclea 1 para la calculadora basica \n";
-  cout << "Teclea 2 para la calculadora de reglas de tres \n" << endl;
+  cout << "- Teclea 1 para la calculadora basica \n";
+  cout << "- Teclea 2 para la calculadora de reglas de tres \n";
+  cout << "- Teclea 3 para la calculadora de ecuaciones de segundo grado\n" << endl;
   std::cin >> elegir;
   if(elegir == 1)
   {
+    prBas:
       cout << "Calculadora basica" << endl;
       double a;
       double b;
@@ -39,7 +42,15 @@ int main()
         cout << "Resta = " << rResta << "\n";
         cout << "Multiplicacion = " << rMult << "\n";
         cout << "Division = " << rDivd << "\n\n";
+        cout << "Presiona una tecla para volver al principio" << endl;
+        a=0;
+        b=0;
+        rSuma=0;
+        rResta=0;
+        rMult=0;
+        rDivd=0;
         system("PAUSE");
+        goto prBas;
   }
   else if (elegir == 2)
   {
@@ -53,6 +64,8 @@ int main()
     float rD;
     char x;
 
+      cout << "Calculadora de reglas de 3" << endl;
+      prRDT:
       cout << "La regla de 3 tiene formato a/c b/d \n";
       cout << "Introduce el valor que quieres obtener (a, b, c o d) en minus. \n";
       std::cin >> x;
@@ -75,6 +88,17 @@ int main()
           rA = (b*c)/d;
           cout << "(" << b << "*" << c << ")/" << d << "\n";
           cout << "Solucion: a = " << rA << endl;
+          a=0;
+          b=0;
+          c=0;
+          d=0;
+          rA=0;
+          rB=0;
+          rC=0;
+          rD=0;
+          cout << "Presiona una tecla para volver al principio" << endl;
+          system("pause");
+          goto prRDT;
           break;
     // b
         case 'b':
@@ -92,6 +116,17 @@ int main()
           rB = (a*d)/c;
           cout << "(" << a << "*" << d << ")/" << c << "\n";
           cout << "Solucion: b = " << rB << endl;
+          a=0;
+          b=0;
+          c=0;
+          d=0;
+          rA=0;
+          rB=0;
+          rC=0;
+          rD=0;
+          cout << "Presiona una tecla para volver al principio" << endl;
+          system("pause");
+          goto prRDT;
           break;
     // c
         case 'c':
@@ -109,6 +144,17 @@ int main()
           rC = (a*d)/b;
           cout << "(" << a << "*" << d << ")/" << b << "\n";
           cout << "Solucion: c = " << rC << endl;
+          a=0;
+          b=0;
+          c=0;
+          d=0;
+          rA=0;
+          rB=0;
+          rC=0;
+          rD=0;
+          cout << "Presiona una tecla para volver al principio" << endl;
+          system("pause");
+          goto prRDT;
           break;
     // d
         case 'd':
@@ -126,12 +172,81 @@ int main()
           rD = (b*c)/a;
           cout << "(" << b << "*" << c << ")/" << a << "\n";
           cout << "Solucion: d = " << rD << endl;
+          a=0;
+          b=0;
+          c=0;
+          d=0;
+          rA=0;
+          rB=0;
+          rC=0;
+          rD=0;
+          cout << "Presiona una tecla para volver al principio" << endl;
+          system("pause");
+          goto prRDT;
           break;
     // si hay un error
         default:
           cout << "Tienes que introducir a, b, c o d" << endl;
+          a=0;
+          b=0;
+          c=0;
+          d=0;
+          rA=0;
+          rB=0;
+          rC=0;
+          rD=0;
+          cout << "Presiona una tecla para volver al principio" << endl;
+          system("pause");
+          goto prRDT;
     	}
-  	}
-  system("pause");
+	}
+//ECUACIONES DE SEGUNDO GRADO
+
+	else if (elegir == 3)
+	{
+        //declaracion de variables
+        double a;
+        double b;
+        double c;
+        double M;
+        double x1;
+        double x2;
+
+        cout << "Calculadora de ecuaciones de segundo grado \n";
+        prESG:
+        cout << "Introduce el valor de a:\n";
+        std::cin >> a;
+        cout << "Introduce el valor de b:\n";
+        std::cin >> b;
+        cout << "Introduce el valor de c:\n";
+        std::cin >> c;
+        cout << "Valores introducidos:\n";
+        cout << "a = " << a << "; b = " << b << "; c = " << c << endl;
+        M = (b*b)-(4*a*c);
+        if (M < 0)
+        {
+          cout << "Esta ecuacion no tiene solucion debido\na que el radicando es negativo\n";
+          cout << "(Solucion de la raiz: " << M << ")" << endl;
+        }
+        else
+        {
+          x1 = (-b - sqrt(M))/(2*a);
+          x2 = (-b + sqrt(M))/(2*a);
+          cout << "Solucion" << endl;
+          cout << "X1 = " << x1 << endl;
+          cout << "X2 = " << x2 << endl;
+          cout << "Pulsa una tecla para volver a empezar" << endl;
+          system("pause");
+        }
+        a=0;
+        b=0;
+        c=0;
+        M=0;
+        x1=0;
+        x2=0;
+    	goto prESG;
+	}
+	cout << "Ha habido un error. Por favor, reinicia." << endl;
+	system("pause");
   return 0;
 }
