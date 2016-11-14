@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+//declaracion de variables
+double a;
+double b;
+double c;
+double M;
+double x1;
+double x2;
+
+int main()
+{
+  cout << "Calculadora de ecuaciones de segundo grado \n";
+  principio:
+  cout << "Introduce el valor de a:\n";
+  std::cin >> a;
+  cout << "Introduce el valor de b:\n";
+  std::cin >> b;
+  cout << "Introduce el valor de c:\n";
+  std::cin >> c;
+  cout << "Valores introducidos:\n";
+  cout << "a = " << a << "; b = " << b << "; c = " << c << endl;
+  M = (b*b)-(4*a*c);
+  if (M < 0)
+  {
+    cout << "Esta ecuacion no tiene solucion debido\na que el radicando es negativo\n";
+    cout << "(Solucion de la raiz: " << M << ")";
+  }
+  else
+  {
+    x1 = (-b - sqrt(M))/(2*a);
+    x2 = (-b + sqrt(M))/(2*a);
+    cout << "Solucion" << endl;
+    cout << "X1 = " << x1 << endl;
+    cout << "X2 = " << x2 << endl;
+    cout << "Pulsa una tecla para volver a empezar" << endl;
+    system("pause");
+  }
+  a=0;
+  b=0;
+  c=0;
+  M=0;
+  x1=0;
+  x2=0;
+  goto principio;
+  system("pause");
+  return 0;
+}
